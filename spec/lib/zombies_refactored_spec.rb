@@ -22,7 +22,6 @@ end
 
 describe Zombie do
   let(:zombie) { Zombie.new }
-  subject{ zombie }
 
   it 'has no name' do
     zombie.name.should be_nil

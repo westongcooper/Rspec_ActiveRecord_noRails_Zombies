@@ -8,6 +8,10 @@ class Zombie < ActiveRecord::Base
     self.hungry
   end
 
+  def hungry!
+    self.hungry = true
+  end
+
   def vegan?
     self.vegan
   end

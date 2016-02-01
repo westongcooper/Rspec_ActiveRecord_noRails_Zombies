@@ -31,4 +31,8 @@ class Zombie < ActiveRecord::Base
   def eat(food)
     self.hungry = !(food == :brains)
   end
+
+  def pulse
+    false
+  end
 end

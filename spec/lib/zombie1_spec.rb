@@ -82,7 +82,7 @@ describe Zombie do
   it { should respond_to(:weapons)}
   it { should be_hungry }  # something tricky here  used be_hungry in replace of should_be hungry? for some reason i guess for readability
   #### use rspec-its gem
-  # binding.pry
+
   its(:height) { should == 5 }
   its(:weapons) { should == Weapon.find(1,2).to_a }
 ###############################

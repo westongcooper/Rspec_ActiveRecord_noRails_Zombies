@@ -3,21 +3,6 @@ class Zombie < ActiveRecord::Base
   has_many :items
   has_many :weapons, through: :items
   after_initialize :load_weapons
-  # DEFAULTS = {name: "",
-  #             brains: 0,hgg
-  #             alive: false,
-  #             rotting: true,
-  #             height: 5,
-  #             hungry: true,
-  #             weapons: ["hands", "teeth"],
-  #             veggie: false}
-
-  # DEFAULTS.each { |k,v| attr_accessor k }
-
-  # def initialize(args={})
-  #   super
-  #   DEFAULTS.merge(args).each { |k,v| instance_variable_set("@#{k}",v) }
-  # end
 
   def hungry?
     self.hungry
@@ -33,5 +18,13 @@ class Zombie < ActiveRecord::Base
 
   def load_weapons
     self.weapons << Weapon.find(1,2)
+  end
+
+  def craving_brains?
+    self.hungry
+  end
+
+  def eat(food)
+    self.hungry = !(food == :brains)
   end
 end

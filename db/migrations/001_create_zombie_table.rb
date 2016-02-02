@@ -10,6 +10,7 @@ class CreateZombiesTable < ActiveRecord::Migration
       t.boolean :hungry, default: true
       t.boolean :vegan, default: false
       t.boolean :alive, default: false
+      t.integer :status_id
     end
     puts 'ran up method'
   end
